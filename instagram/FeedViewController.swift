@@ -77,6 +77,27 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
         delegate.window?.rootViewController = loginViewController
     }
+    
+    // Everytime the user taps on a table view cell, we will get the exact cell they tapped on
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        
+        let comment = PFObject(className: "Comments")
+        comment["post"] = post // post is this comment attached to
+        comment["author"] = PFUser.current()! // author of comment
+        comment["text"] = "Bob here, commenting on this post!" // actual comment content
+        
+        post.add(comment, forKey: "comments")
+        
+        post.saveInBackground { (success, error) in
+            if success {
+                print("Comment has been added to post!")
+            } else {
+                print("There was an error adding the comment to the post!")
+                print(error ?? "Unknown error.")
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

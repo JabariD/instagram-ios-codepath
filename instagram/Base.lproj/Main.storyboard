@@ -88,11 +88,66 @@
                         <viewLayoutGuide key="safeArea" id="Qdb-Uc-QMU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9Ht-3f-uat"/>
+                    <navigationItem key="navigationItem" id="9Ht-3f-uat">
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="3Ln-zh-qtX">
+                            <connections>
+                                <segue destination="Wkn-RG-bqc" kind="presentation" id="rTL-VO-L3m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVd-UI-k17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1733.3333333333335" y="72.991071428571431"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="yOW-Ft-6PP">
+            <objects>
+                <viewController id="Wkn-RG-bqc" customClass="CameraViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bsz-QN-KOc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="sU3-2F-kMI">
+                                <rect key="frame" x="0.0" y="20" width="414" height="343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dOQ-JC-B3X" appends="YES" id="iYp-g5-QLo"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-xw-xdF">
+                                <rect key="frame" x="35" y="386" width="345" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wX-HB-7UP">
+                                <rect key="frame" x="35" y="462" width="345" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmitButton:" destination="Wkn-RG-bqc" eventType="touchUpInside" id="UeB-hb-u6m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xin-cG-ghd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="BoO-xw-xdF" id="x6p-G6-UPt"/>
+                        <outlet property="imageView" destination="sU3-2F-kMI" id="IRb-0T-2b8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycs-iE-oNg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dOQ-JC-B3X">
+                    <connections>
+                        <action selector="onCameraButton:" destination="Wkn-RG-bqc" id="3O3-pX-mOP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2573.913043478261" y="72.991071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s4H-Xm-YSr">
@@ -114,7 +169,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram_logo" width="255" height="108"/>
+        <image name="placeholder-image" width="800" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

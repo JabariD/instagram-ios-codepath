@@ -10,13 +10,14 @@
 		5B8C310CA8C56770FFFFBCB0 /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3472D05E7B0554CC607469A8 /* Pods_instagram.framework */; };
 		A494F42F27CB269C00A01E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F42E27CB269C00A01E8C /* AppDelegate.swift */; };
 		A494F43127CB269C00A01E8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F43027CB269C00A01E8C /* SceneDelegate.swift */; };
-		A494F43327CB269C00A01E8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F43227CB269C00A01E8C /* ViewController.swift */; };
 		A494F43627CB269C00A01E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494F43427CB269C00A01E8C /* Main.storyboard */; };
 		A494F43827CB269F00A01E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A494F43727CB269F00A01E8C /* Assets.xcassets */; };
 		A494F43B27CB269F00A01E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A494F43927CB269F00A01E8C /* LaunchScreen.storyboard */; };
 		A494F44627CB26A000A01E8C /* instagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F44527CB26A000A01E8C /* instagramTests.swift */; };
 		A494F45027CB26A000A01E8C /* instagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F44F27CB26A000A01E8C /* instagramUITests.swift */; };
 		A494F45227CB26A000A01E8C /* instagramUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F45127CB26A000A01E8C /* instagramUITestsLaunchTests.swift */; };
+		A494F45F27CB344800A01E8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F45E27CB344800A01E8C /* LoginViewController.swift */; };
+		A494F46127CB345400A01E8C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F46027CB345400A01E8C /* FeedViewController.swift */; };
 		CB62120E9299770ADBB2C16B /* Pods_instagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0328544FF381C5D2AEE880 /* Pods_instagramTests.framework */; };
 		F1583C87878C9227A9732D77 /* Pods_instagram_instagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98910BF4E9BC7206966DC762 /* Pods_instagram_instagramUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,7 +51,6 @@
 		A494F42B27CB269C00A01E8C /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A494F42E27CB269C00A01E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A494F43027CB269C00A01E8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A494F43227CB269C00A01E8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A494F43527CB269C00A01E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A494F43727CB269F00A01E8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A494F43A27CB269F00A01E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		A494F44B27CB26A000A01E8C /* instagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A494F44F27CB26A000A01E8C /* instagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramUITests.swift; sourceTree = "<group>"; };
 		A494F45127CB26A000A01E8C /* instagramUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A494F45E27CB344800A01E8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A494F46027CB345400A01E8C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CEF03690A11CA077890A96BD /* Pods-instagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.release.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +113,6 @@
 				0779EBEB4768C6B9F3A602AC /* Pods-instagramTests.debug.xcconfig */,
 				CEF03690A11CA077890A96BD /* Pods-instagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,11 +143,12 @@
 			children = (
 				A494F42E27CB269C00A01E8C /* AppDelegate.swift */,
 				A494F43027CB269C00A01E8C /* SceneDelegate.swift */,
-				A494F43227CB269C00A01E8C /* ViewController.swift */,
 				A494F43427CB269C00A01E8C /* Main.storyboard */,
 				A494F43727CB269F00A01E8C /* Assets.xcassets */,
 				A494F43927CB269F00A01E8C /* LaunchScreen.storyboard */,
 				A494F43C27CB269F00A01E8C /* Info.plist */,
+				A494F45E27CB344800A01E8C /* LoginViewController.swift */,
+				A494F46027CB345400A01E8C /* FeedViewController.swift */,
 			);
 			path = instagram;
 			sourceTree = "<group>";
@@ -407,8 +409,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A494F43327CB269C00A01E8C /* ViewController.swift in Sources */,
+				A494F45F27CB344800A01E8C /* LoginViewController.swift in Sources */,
 				A494F42F27CB269C00A01E8C /* AppDelegate.swift in Sources */,
+				A494F46127CB345400A01E8C /* FeedViewController.swift in Sources */,
 				A494F43127CB269C00A01E8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

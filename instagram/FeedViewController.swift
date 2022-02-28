@@ -17,6 +17,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let commentBar = MessageInputBar()
     var showsCommentBar = false
+    var selectedPost: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         // create comment
+        let comment = PFObject(className: "Comments")
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()! // author of comment
+        comment["text"] = text // actual comment content
+
+        selectedPost.add(comment, forKey: "comments")
+
+        selectedPost.saveInBackground { (success, error) in
+            if success {
+                print("Comment has been added to post!")
+            } else {
+                print("There was an error adding the comment to the post!")
+                print(error ?? "Unknown error.")
+            }
+        }
+        
+        tableView.reloadData()
         
         // clear and dismiss input bar
         commentBar.inputTextView.text = nil
@@ -156,21 +174,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             showsCommentBar = true
             becomeFirstResponder()
             commentBar.inputTextView.becomeFirstResponder()
+            selectedPost = post
         }
-//        comment["post"] = post // post is this comment attached to
-//        comment["author"] = PFUser.current()! // author of comment
-//        comment["text"] = "Bob here, commenting on this post!" // actual comment content
-//
-//        post.add(comment, forKey: "comments")
-//
-//        post.saveInBackground { (success, error) in
-//            if success {
-//                print("Comment has been added to post!")
-//            } else {
-//                print("There was an error adding the comment to the post!")
-//                print(error ?? "Unknown error.")
-//            }
-//        }
     }
     /*
     // MARK: - Navigation
